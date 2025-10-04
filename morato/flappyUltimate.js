@@ -28,9 +28,16 @@ flappyUltimate.js
   return el;
   }
 
-  const birdSprite = ensureAsset('birdSprite','img',{src:'https://i.ibb.co/Tk6m6fB/bird-sprite.png'});
-const pipeSprite = ensureAsset('pipeSprite','img',{src:'https://i.ibb.co/fk7R4rP/pipe.png'});
-const groundSprite = ensureAsset('groundSprite','img',{src:'https://i.ibb.co/q0sH8Lf/ground.png'});
+  const birdSprite = ensureAsset('birdSprite','img',{
+  src:'https://raw.githubusercontent.com/sourabhv/FlappyBirdClone/master/assets/sprites/yellowbird-midflap.png'
+});
+const pipeSprite = ensureAsset('pipeSprite','img',{
+  src:'https://raw.githubusercontent.com/sourabhv/FlappyBirdClone/master/assets/sprites/pipe-green.png'
+});
+const groundSprite = ensureAsset('groundSprite','img',{
+  src:'https://raw.githubusercontent.com/sourabhv/FlappyBirdClone/master/assets/sprites/base.png'
+});
+
 
 const jumpSound = ensureAsset('jumpSound','audio',{src:'https://freesound.org/data/previews/331/331912_3248244-lq.mp3', preload:'auto'});
 const pointSound = ensureAsset('pointSound','audio',{src:'https://freesound.org/data/previews/331/331912_3248244-lq.mp3', preload:'auto'});
