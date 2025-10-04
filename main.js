@@ -1,4 +1,13 @@
 function executarJogo(nome) {
+
+  // Se houver jogo ativo com cleanup, chama ele para garantir limpeza
+try {
+if (window.__currentGame && typeof window.__currentGame.cleanup === 'function') {
+window.__currentGame.cleanup();
+}
+} catch (e) {
+console.warn('Erro ao chamar cleanup do jogo anterior', e);
+}
   // Remove o script anterior
   const scriptsAnteriores = document.querySelectorAll('script[data-jogo]');
   scriptsAnteriores.forEach(s => s.remove());
