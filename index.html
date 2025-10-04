@@ -1,12 +1,75 @@
-<html>
-    <head>
-        
-    </head>
-    <body>
-       <h1> Bem-vindo a minha página</h1>
-       <button onclick = "execultarExercicio('trabalho-final')">Jogar jo-ken-po</button>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yanzinho Games</title>
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilo principal -->
+  <link rel="stylesheet" href="yan_styles.css">
+  <link rel="stylesheet" href="morato/duck-duck-go.css">
+
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">🎮 Yanzinho Games</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Categorias</a></li>
+        <li><a href="#">Novos</a></li>
+        <li><a href="#">Populares</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="container">
+    <!-- Área de destaque -->
+    <section class="highlight">
+      <h1>Bem Vindo aos jogos interativos do Yanzinho Games!</h1>
+      <p>Escolha um jogo abaixo e comece a se divertir 🚀</p>
+      <p id="jogoAtual">Nenhum jogo em execução</p>
+    </section>
+
+    <!-- Grid de jogos -->
+    <section class="games-grid">
+      <div class="game-card" onclick="executarJogo('jo-ken-po')">
+        <img src="cardsimg/jo-ken-po.jpg" alt="Jo-Ken-Po">
+        <h3>Jo-Ken-Po</h3>
+      </div>
+      <div class="game-card" onclick="executarJogo('morato/jo-ken-po')">
+        <img src="cardsimg/jo-ken-po-2.jpg" alt="Jo-Ken-Po-2">
+        <h3>Jo-ken-Po-2</h3>
+      </div>
+      <div class="game-card" onclick="executarJogo('morato/duck-duck-go')">
+        <img src="cardsimg/duck-duck-go.jpg" alt="duck-duck-go">
+        <h3>Duck-duck-go</h3>
+      </div>
+    </section>
+
+  </main>
+
+    <!-- Modal para jogos -->
+    <div id="game-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <section id="game-area"></section>
+    </div>
+    </div>
 
 
-            <script src="main.js"></script>
-    </body>
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2025 YanMorato - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="main.js"></script>
+</body>
 </html>

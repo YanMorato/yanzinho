@@ -1,20 +1,41 @@
-//script para execultar meus arquivos js por click
+function executarJogo(nome) {
+  // Remove o script anterior
+  const scriptsAnteriores = document.querySelectorAll('script[data-jogo]');
+  scriptsAnteriores.forEach(s => s.remove());
 
-function execultarExercicio (nome){
-    //Remove o script anterior
-    const scriptsAnteriores = document.querySelectorAll('script[data-exercicio]');
-    scriptsAnteriores.forEach(s => s.remove());
+  // Importar dinamicamente
+  const script = document.createElement('script');
+  script.src = `${nome}.js`;
+  script.dataset.jogo = nome;
+  script.onload = () => {
+    console.log(`Jogo "${nome}" carregado.`);
+    abrirModal();
+  };
+  script.onerror = () => {
+    console.error(`Erro ao carregar o jogo "${nome}"`);
+  };
+  document.body.appendChild(script);
 
-    //Importar dinâmicamente meus exercicios
-     const script = document.createElement('script');
-     script.src = `${nome}.js`;
-     script.onload = () => {
-        console.log(`Exercicio "${nome}" carregado.`);
-     };
-     script.onerror = () => {
-        console.error(`Erro ao carregar o exercicio "${nome}"`);
-     };
-     document.body. appendChild (script);
-     document.getElementById ("exercicioAtual"). textContent = `Execultando: ${nome}`;
-     console.clear ();
+  document.getElementById("jogoAtual").textContent = `Executando: ${nome}`;
+  console.clear();
 }
+
+// ---- Modal ----
+const modal = document.getElementById("game-modal");
+const closeModalBtn = document.getElementById("close-modal");
+
+function abrirModal() {
+  modal.style.display = "block";
+}
+
+closeModalBtn.onclick = function() {
+  modal.style.display = "none";
+  document.getElementById("game-area").innerHTML = ""; // limpa o jogo ao fechar
+};
+
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+    document.getElementById("game-area").innerHTML = "";
+  }
+};
